@@ -165,6 +165,9 @@ test_that("mwb_cached_data_files works", {
 test_that("mwb_list_files works", {
     expect_error(mwb_list_files(c("ST000016", "ST002115")),
                  "Provide a single Metabolomics Workbench ID")
+
+    res <- mwb_list_files("ST002115")
+    expect_equal(nrow(res), 24)
 })
 
 test_that("mwb_delete_cache works", {
@@ -299,6 +302,20 @@ test_that("mwb_metadata works", {
         expect_error(
             mwb_metadata("ST002115"),
             "Failed to connect to Metabolomics Workbench"
+        )
+    )
+
+    ## Error parse JSON
+    first_mwb_rest_request <- fromJSON(mwb_rest_request("ST002115",
+                                                    outputItem = "analysis"))
+    with_mocked_bindings(
+        fromJSON = mock_output_sequence(
+            first_mwb_rest_request,
+            simpleError("Parse error")
+        ),
+        expect_error(
+            mwb_metadata("ST002115"),
+            "Failed to parse JSON response"
         )
     )
 

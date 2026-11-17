@@ -563,7 +563,6 @@ mwb_cached_data_files <- function(mwbId = character(),
 
         ## Submit POST request and save directly to cache path
         cache_path <- bfcnew(bfc, dfiles[i, "parsed_name"], fname = "exact")
-        if (file.exists(cache_path)) file.remove(cache_path)
 
         invisible({
             response <- retry(request(url) |> req_body_form(!!!params) |>
