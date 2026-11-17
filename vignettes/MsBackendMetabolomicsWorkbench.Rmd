@@ -222,6 +222,11 @@ meta$MS_run
 meta$sample_annotation
 ```
 
+# License
+
+This vignette is distributed under a [CC BY-SA
+license](https://creativecommons.org/licenses/by-sa/4.0/).
+
 # Session information
 
 ```{r session_info}

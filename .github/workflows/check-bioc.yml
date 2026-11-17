@@ -36,7 +36,7 @@ name: R-CMD-check-bioc
 ## "/nocache" in the commit message.
 env:
   has_testthat: 'true'
-  run_covr: 'false'
+  run_covr: 'true'
   run_pkgdown: 'true'
   has_RUnit: 'false'
   has_BiocCheck: 'false'
@@ -167,7 +167,6 @@ jobs:
 
           ## Manually install required packages
           BiocManager::install("mzR", dependencies = TRUE, ask = FALSE, update = FALSE)
-          BiocManager::install("RforMassSpectrometry/MsCoreUtils")
 
           message(paste('****', Sys.time(), 'force installation of selected packages ****'))
           BiocManager::install(c("BiocStyle", "rmarkdown", "magick", "Spectra"))
