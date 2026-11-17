@@ -1,5 +1,14 @@
 # MsBackendMetabolomicsWorkbench 0.99
 
+## Changes in 0.99.3
+
+- Fix metadata download after changes in JSON parsing.
+
+## Changes in 0.99.2
+
+- Fix bug when files have same file name in different subfolder inside a zip [#11](https://github.com/rformassspectrometry/MsBackendMetabolomicsWorkbench/issues/11).
+- Fix bug in parsing of file name with "+".
+
 ## Changes in 0.99.1
 
 - Update `.Rbuildignore` to include of `NEWS.md`.
