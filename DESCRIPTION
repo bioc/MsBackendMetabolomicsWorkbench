@@ -1,6 +1,6 @@
 Package: MsBackendMetabolomicsWorkbench
 Title: Retrieve Mass Spectrometry Data from Metabolomics Workbench
-Version: 0.99.4
+Version: 1.0.0
 Authors@R:
     c(person(given = "Gabriele", family = "Tomè",
              email = "gabriele.tome@eurac.edu",
